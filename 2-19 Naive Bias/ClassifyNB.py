@@ -12,5 +12,5 @@ def classify(features_train, labels_train):
  # return clf.fit(features_train, labels_train)
 
     from sklearn.svm import SVC
-    clf = SVC(kernel='poly', C=100.0, degree=4)
+    clf = SVC(kernel='rbf', C=100.0)
     return clf.fit(features_train, labels_train)

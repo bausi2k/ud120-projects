@@ -31,10 +31,12 @@ def preprocess(words_file = "../tools/word_data.pkl", authors_file="../tools/ema
     ### this preprocessing will be repeated in the text learning mini-project
     authors_file_handler = open(authors_file, "r")
     authors = pickle.load(authors_file_handler)
+    #print(authors)
     authors_file_handler.close()
 
     words_file_handler = open(words_file, "r")
     word_data = cPickle.load(words_file_handler)
+    #print(word_data)
     words_file_handler.close()
 
     ### test_size is the percentage of events assigned to the test set

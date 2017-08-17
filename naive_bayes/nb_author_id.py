@@ -35,9 +35,9 @@ clf = GaussianNB()
 t0 = time()
 print("start time:", round(time()-t0, 3), "s")
 
-pprint(features_train)
+#pprint(features_train, indent=2)
 print()
-pprint(lables_train )
+#pprint(labels_train, depth=4, indent=2)
 
 clf.fit(features_train, labels_train)
 

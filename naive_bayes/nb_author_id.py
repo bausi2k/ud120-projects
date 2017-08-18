@@ -33,6 +33,7 @@ clf = GaussianNB()
 
 ## time tracking
 t0 = time()
+print(t0, "s")
 print("start time:", round(time()-t0, 3), "s")
 
 #pprint(features_train, indent=2)
@@ -42,11 +43,13 @@ print()
 clf.fit(features_train, labels_train)
 
 
-print ("training time:", round(time()-t0, 3), "s")
+t2 = round(time()-t0, 3)
+print ("training time:", t2, "s")
 
 
 labels_pred = clf.predict(features_test)
-print ("prediction time:", round(time()-t0, 3), "s")
+t3 = round(time()-t2-t0, 3)
+print ("prediction time:", t3, "s")
 print (labels_pred)
 
 ## accuracy

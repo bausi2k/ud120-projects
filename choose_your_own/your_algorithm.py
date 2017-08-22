@@ -34,9 +34,13 @@ plt.show()
 
 
 
+from sklearn.metrics import accuracy_score
+from sklearn.neighbors import KNeighborsClassifier
+clf = KNeighborsClassifier(n_neighbors=1)
+clf.fit(features_train, labels_train)
+labels_pred = clf.predict(features_test)
 
-
-
+print("Accuracy: {0:.3f}".format(accuracy_score(labels_test, labels_pred)))
 
 try:
     prettyPicture(clf, features_test, labels_test)

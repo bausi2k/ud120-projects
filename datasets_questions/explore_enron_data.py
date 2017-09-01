@@ -16,7 +16,7 @@
 """
 
 import pickle
-
+import pprint
 j = 0
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
@@ -47,3 +47,36 @@ for person_name in enron_data:
         for key in enron_data[person_name]:
             if "stock" in key.lower():
                 print(key, enron_data[person_name][key])
+
+
+#Wesley Colwell 6-19
+for person_name in enron_data:
+     #print(person_name)
+     if "wesley" in person_name.lower():
+         #print("Not James")
+         pprint.pprint(enron_data[person_name])
+         for key in enron_data[person_name]:
+             if "from_this_person_to_poi" in key.lower():
+              print(key, enron_data[person_name][key])
+              print("#### END Lesson 6-19")
+
+
+
+
+#Jeffrey K Skilling 6-20
+for person_name in enron_data:
+     #print(person_name)
+     if "skilling" in person_name.lower():
+         print("Person: {}".format(person_name))
+         pprint.pprint(enron_data[person_name])
+         for key in enron_data[person_name]:
+             if "stock" in key.lower():
+              print(key, enron_data[person_name][key])
+              print("#### END Lesson 6-20")
+
+
+
+
+
+
+

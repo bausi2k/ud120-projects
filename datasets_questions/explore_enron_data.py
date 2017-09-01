@@ -37,7 +37,7 @@ for names in enron_names:
     else:
         print(names)
         pois = pois + 1
-print("Number of Pois: ", pois)
+print("Number of Pois:  ", pois)
 
 for person_name in enron_data:
     #print(person_name)

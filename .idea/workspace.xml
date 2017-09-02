@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6d09b826-c98b-4706-bddc-fedcefb6cfcc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets_questions/explore_enron_data.py" afterPath="$PROJECT_DIR$/datasets_questions/explore_enron_data.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -230,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504210402622</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Lesson 6 completed.">
+      <created>1504352311471</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1504352311471</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -271,7 +277,8 @@
     <MESSAGE value="Lesson 5 completed" />
     <MESSAGE value="Testupdate PyCharm" />
     <MESSAGE value="Up to Lesson 6-18 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Up to Lesson 6-18 completed" />
+    <MESSAGE value="Lesson 6 completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 6 completed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

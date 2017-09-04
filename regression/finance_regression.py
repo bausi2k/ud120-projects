@@ -29,7 +29,8 @@ target, features = targetFeatureSplit( data )
 from sklearn.cross_validation import train_test_split
 feature_train, feature_test, target_train, target_test = train_test_split(features, target, test_size=0.5, random_state=42)
 train_color = "b"
-test_color = "b"
+#test_color = "b" #changed for 7-40
+test_color = "r"
 
 
 
@@ -38,12 +39,15 @@ test_color = "b"
 ### plots it correctly. Don't forget to change the test_color above from "b" to
 ### "r" to differentiate training points from test points.
 
-
-
-
-
-
-
+from sklearn import linear_model
+from sklearn.metrics import  r2_score
+reg = linear_model.LinearRegression()
+reg.fit(feature_train, target_train)  #comment for 7-40
+#reg.fit(features,target) #uncomment for 7-43
+title="sloep&intercept: " + str(round(reg.coef_[0],2)) #+ str(reg.coef_[1]) #as there is no intercept...
+print(title)
+print(reg.coef_)
+print('Variance score: %.2f' % reg.score(feature_test, target_test))
 
 ### draw the scatterplot, with color-coded training and testing points
 import matplotlib.pyplot as plt
@@ -67,4 +71,6 @@ except NameError:
 plt.xlabel(features_list[1])
 plt.ylabel(features_list[0])
 plt.legend()
+plt.title(title)
 plt.show()
+plt.savefig('foo.png')

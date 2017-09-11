@@ -41,7 +41,7 @@ try:
 except NameError:
     pass
 plt.scatter(ages, net_worths)
-#plt.show()
+#plt.show() #removed for better performance, if you want to see the picture, uncomment
 
 
 ### identify and remove the most outlier-y points
@@ -70,10 +70,12 @@ if len(cleaned_data) > 0:
     plt.scatter(ages, net_worths)
     plt.xlabel("ages")
     plt.ylabel("net worths")
-    #plt.show()
+    #plt.show() #removed for better performance, if you want to see the picture, uncomment
     plt.savefig('foo.png')
 
+    print("coefficency after cleaning: ", reg.coef_)
 
+    print("Score after cleaning: ", reg.score(ages_test, net_worths_test))
 else:
     print("outlierCleaner() is returning an empty list, no refitting to be done")
 

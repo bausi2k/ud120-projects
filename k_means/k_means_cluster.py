@@ -8,7 +8,7 @@
 
 
 import pickle
-import numpy
+import numpy as np
 import matplotlib.pyplot as plt
 import sys
 sys.path.append("../tools/")
@@ -34,7 +34,7 @@ def Draw(pred, features, poi, mark_poi=False, name="image.png", f1_name="feature
     plt.xlabel(f1_name)
     plt.ylabel(f2_name)
     plt.savefig(name)
-    plt.show()
+    #plt.show()
 
 
 
@@ -48,9 +48,9 @@ data_dict.pop("TOTAL", 0)
 ### can be any key in the person-level dictionary (salary, director_fees, etc.) 
 feature_1 = "salary"
 feature_2 = "exercised_stock_options"
-feature_3 = "total_payments"    # for Lesson 9-21
+#feature_3 = "total_payments"    # for Lesson 9-21
 poi  = "poi"
-features_list = [poi, feature_1, feature_2, feature_3]
+features_list = [poi, feature_1, feature_2]
 data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
 
@@ -60,9 +60,10 @@ poi, finance_features = targetFeatureSplit( data )
 ### for f1, f2, _ in finance_features:
 ### (as it's currently written, the line below assumes 2 features)
 # f3 is for Lesson 9-21
-for f1, f2, f3 in finance_features:
+#for f1, f2, f3 in finance_features:
+for f1, f2 in finance_features:
     plt.scatter( f1, f2 )
-plt.show()
+#plt.show()
 plt.savefig('three_feat.png')
 
 
@@ -73,6 +74,35 @@ from sklearn.cluster import KMeans
 kmeans = KMeans(n_clusters=2, random_state=0).fit(finance_features)
 pred = kmeans.predict(finance_features)
 
+
+'''
+Lesson 10-17 not needed, you can use finance_features instead, they are as valid as building a numpy array from raw_data
+stock_options = []
+salary_options = []
+for key,value in data_dict.iteritems():
+    #if value['exercised_stock_options'] != 'NaN':      #Lesson8-22
+    if value['salary'] != 'NaN':
+        salary_options.append(value['salary'] * 1.)
+    elif value['salary'] == 'NaN':
+        salary_options.append(0.)
+
+for key,value in data_dict.iteritems():
+    if value['exercised_stock_options'] != 'NaN':
+        stock_options.append(value['exercised_stock_options'] * 1.)  #Lesson 8-22
+    elif value['exercised_stock_options'] == 'NaN':
+        stock_options.append(0.)
+
+
+all_data = np.column_stack((salary_options, stock_options))
+'''
+
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+#scaler = scaler.fit(all_data)
+scaler = scaler.fit(finance_features)
+
+X_test = np.array([[200000.,1000000.]])
+print(scaler.transform(X_test))
 
 ''' #this was my solution, but it didn't worked, because NaN is treated as 0 by the cleanup! ->  0 is not the correct answer for the minimum
 def max_value(inputlist, pos):

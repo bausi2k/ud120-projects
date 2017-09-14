@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d09b826-c98b-4706-bddc-fedcefb6cfcc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/k_means/clusters_with3.pdf" afterPath="$PROJECT_DIR$/k_means/clusters_with3.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/k_means/three_feat.png" afterPath="$PROJECT_DIR$/k_means/three_feat.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/k_means/k_means_cluster.py" afterPath="$PROJECT_DIR$/k_means/k_means_cluster.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -282,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505071344793</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Lesson 10-17 completed">
+      <created>1505417849442</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1505417849442</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -348,7 +352,8 @@
     <MESSAGE value="Up to Lesson 6-18 completed" />
     <MESSAGE value="Lesson 6 completed." />
     <MESSAGE value="Lesson 8-12 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 8-12 completed" />
+    <MESSAGE value="Lesson 10-17 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 10-17 completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

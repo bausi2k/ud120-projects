@@ -47,7 +47,8 @@ data_dict.pop("TOTAL", 0)
 ### the input features we want to use 
 ### can be any key in the person-level dictionary (salary, director_fees, etc.) 
 feature_1 = "salary"
-feature_2 = "exercised_stock_options"
+#feature_2 = "exercised_stock_options"
+feature_2 = "from_messages"         #added for Lesson 10-17
 #feature_3 = "total_payments"    # for Lesson 9-21
 poi  = "poi"
 features_list = [poi, feature_1, feature_2]

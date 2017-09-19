@@ -44,7 +44,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
         temp_counter += 1
         if temp_counter < 200:
             path = os.path.join('..', path[:-1])
-            print(path)
+            #print(path)
             email = open(path, "r")
 
             ### use parseOutText to extract the text from the opened email
@@ -83,5 +83,15 @@ pickle.dump( from_data, open("your_email_authors.pkl", "w") )
 
 
 ### in Part 4, do TfIdf vectorization here
+from nltk.corpus import stopwords
+sw = stopwords.words('english')
+word_data2 = []
+print(word_data)
+print(sw)
 
+
+a = [x for x in word_data if x != sw]
+print(word_data2)
+from sklearn.feature_extraction.text import TfidfTransformer
+transformer = TfidfTransformer(smooth_idf=False)
 

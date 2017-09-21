@@ -89,7 +89,10 @@ vectorizer = TfidfVectorizer(stop_words='english', lowercase=True)
 myvector = vectorizer.fit_transform(word_data)
 myelements = vectorizer.get_feature_names()
 #print(myelements)
-print(len(vectorizer.get_feature_names()))
+print("Number of Features: {}".format(vectorizer.get_feature_names()))
 #print(vectorizer.get_feature_names())
-print(vectorizer.get_feature_names()[34596])
+#print(myelements)
+print("Element 35597: {}".format([34596]))
+#The code should be correct, although the Quiz says no...
+
 

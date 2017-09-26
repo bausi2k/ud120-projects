@@ -42,34 +42,35 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
         ### only look at first 200 emails when developing
         ### once everything is working, remove this line to run over full dataset
         temp_counter += 1
-    #if temp_counter < 200:
-        path = os.path.join('..', path[:-1])
-        #print(path)
-        email = open(path, "r")
+        #if temp_counter < 200: #use this before Lesson 12
+        if temp_counter > 0:
+            path = os.path.join('..', path[:-1])
+            #print(path)
+            email = open(path, "r")
 
-        ### use parseOutText to extract the text from the opened email
-        tempi = parseOutText(email)
+            ### use parseOutText to extract the text from the opened email
+            tempi = parseOutText(email)
 
 
-        ### use str.replace() to remove any instances of the words
-        ### ["sara", "shackleton", "chris", "germani"]
-        tempi = tempi.replace("sara","")
-        tempi = tempi.replace("shackleton","")
-        tempi = tempi.replace("sachrisra","")
-        tempi = tempi.replace("germani","")
+            ### use str.replace() to remove any instances of the words
+            ### ["sara", "shackleton", "chris", "germani"]
+            tempi = tempi.replace("sara","")
+            tempi = tempi.replace("shackleton","")
+            tempi = tempi.replace("sachrisra","")
+            tempi = tempi.replace("germani","")
 
-        ### append the text to word_data
-        word_data.append(tempi)
-        ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
+            ### append the text to word_data
+            word_data.append(tempi)
+            ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
 
-        if email == "From: sara.shackleton@enron.com":
-            from_data.append('0')
-        else:
-            from_data.append('1')
+            if email == "From: sara.shackleton@enron.com":
+                from_data.append('0')
+            else:
+                from_data.append('1')
 
-        email.close()
+            email.close()
 
-print "emails processed"
+print("emails processed")
 from_sara.close()
 from_chris.close()
 
@@ -94,5 +95,3 @@ print("Number of Features: {}".format(vectorizer.get_feature_names()))
 #print(myelements)
 print("Element 35597: {}".format([34596]))
 #The code should be correct, although the Quiz says no...
-
-

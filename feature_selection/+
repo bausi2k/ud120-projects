@@ -14,7 +14,7 @@ word_data = pickle.load( open(words_file, "r"))
 authors = pickle.load( open(authors_file, "r") )
 
 for i in authors:
-    if i < 1:
+    if i != 1:
         print(i)
 
 
@@ -53,8 +53,7 @@ print("Score: {}".format(accuracy_score(labels_test, pred_arr)))
 # The Code puts out 1.0, although the correct answer is: 0.948236632537
 # https://discussions.udacity.com/t/lesson-12-accuracy-of-your-overfit-decision-tree-mini-lec-26/251831/17
 # Dont have a clue why, the code ist correct compared to the suggestions in the forum...
-count = 0
+
 for i in clf.feature_importances_:
-    count += 1
     if i > 0.2:
-        print("Feature: ", i, count)
+        print("Feature: ", i)

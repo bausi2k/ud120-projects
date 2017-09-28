@@ -58,6 +58,8 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             tempi = tempi.replace("shackleton","")
             tempi = tempi.replace("sachrisra","")
             tempi = tempi.replace("germani","")
+            tempi = tempi.replace("shireman","")    #Added for Lesson 12-29
+            tempi = tempi.replace("shiringhouectect","")    #Added for Lesson 12-29
 
             ### append the text to word_data
             word_data.append(tempi)

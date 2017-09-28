@@ -8,7 +8,7 @@ numpy.random.seed(42)
 ### The words (features) and authors (labels), already largely processed.
 ### These files should have been created from the previous (Lesson 10)
 ### mini-project.
-words_file = "../text_learning/your_word_data.pkl" 
+words_file ="../text_learning/your_word_data.pkl"
 authors_file = "../text_learning/your_email_authors.pkl"
 word_data = pickle.load( open(words_file, "r"))
 authors = pickle.load( open(authors_file, "r") )
@@ -41,6 +41,7 @@ print("Training points: {}".format(len(features_train)))
 from sklearn import tree
 from sklearn.metrics import accuracy_score
 
+
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(features_train, labels_train)
 pred_arr = clf.predict(features_test)
@@ -52,7 +53,19 @@ print("Score: {}".format(accuracy_score(labels_test, pred_arr)))
 # Dont have a clue why, the code ist correct compared to the suggestions in the forum...
 print("Important features:")
 checker = 0.0
+
 for index, feature in enumerate(clf.feature_importances_):
-    if feature > 0.2 and checker < feature:
+    if feature > 0.02 and checker < feature:
         checker = feature
         print("Max feature at index {} with value {} ".format(index, feature))
+
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+tfidf=TfidfVectorizer(stop_words='english')
+#tfidf.fit_transform(word_data)
+tfidf.fit_transform(word_data)
+print(len(tfidf.get_feature_names()))
+
+print(checker)
+print(tfidf.get_feature_names()[33656])
+print("Score after cleanup: {}".format(accuracy_score(labels_test, pred_arr)))   # print after feature clenaup

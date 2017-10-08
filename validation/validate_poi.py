@@ -29,4 +29,12 @@ labels, features = targetFeatureSplit(data)
 
 ### it's all yours from here forward!  
 
+from sklearn import tree
+from sklearn.model_selection import train_test_split
 
+F_train, F_test, L_train, L_test = train_test_split(features, labels, test_size=0.3, random_state=42)
+
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(F_train, L_train)
+
+print(clf.score(F_test, L_test))

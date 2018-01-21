@@ -18,12 +18,23 @@ with open("final_project_dataset.pkl", "r") as data_file:
     data_dict = pickle.load(data_file)
 
 print(len(data_dict))
-pprint(data_dict)
+#pprint(data_dict)
 # --> data_dict contians NaN values
-#TODO Think about changing the data...
+#TODO Think about changing the data... done -> checked each value an put it on "0"
+
+for POI in data_dict:
+    #print(POI)
+        #print(feature_id)
+    for element in data_dict[POI]:
+        if data_dict[POI][element] == 'NaN':
+            data_dict[POI][element] = 0
 
 
 ### Task 2: Remove outliers
+
+max = (0,0)
+max = np.amax(data, axis=0)
+print("Max element: ", max[0], max[1])
 ### Task 3: Create new feature(s)
 ### Store to my_dataset for easy export below.
 my_dataset = data_dict
